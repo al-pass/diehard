@@ -1,50 +1,79 @@
-let lore = document.querySelector('.lore');
-let rules = document.querySelector('.rules');
-let stories = document.querySelector('.stories');
-let graveyard = document.querySelector('.graveyard');
-let infoSection = document.querySelector('.info-popup');
-let infoSectionbg = document.querySelector('.info-popup-bg');
-let infoSectiionTitle = document.querySelector('.info-popup__title');
-let infoSectiionDesc = document.querySelector('.info-popup__desc');
+(function() {
+    const popup = document.querySelector('.info-popup');
+    const popupBg = document.querySelector('.info-popup-bg');
+    const popupTitle = document.querySelector('.info-popup__title');
+    const popupDesc = document.querySelector('.info-popup__desc');
+    const popupImg = document.querySelector('.info-popup__img');
 
+    const popupCloseButton = popup.querySelector('.info-popup__close-button');
+    const mainScreeButtons = Array.from(document.querySelectorAll('.info-blocks__main-sections-buttons'));
+    const mainScreenTopicsInfo = [{
+            class: 'lore',
+            title: 'Лор',
+            desc: 'Описание лора на сколько угодно текста, жедательно не много разве что',
+            img: 'open_book_by__breezy__d19k2v-pre.jpg'
+        },
+        {
+            class: 'rules',
+            title: 'Правила',
+            desc: 'Описание правил на сколько угодно текста, жедательно не много разве что',
+            img: 'open_book_by__breezy__d19k2v-pre.jpg'
+        },
+        {
+            class: 'stories',
+            title: 'Истории',
+            desc: 'Описание истории на сколько угодно текста, жедательно не много разве что',
+            img: 'open_book_by__breezy__d19k2v-pre.jpg'
+        },
+        {
+            class: 'graveyard',
+            title: 'Кладбище',
+            desc: 'Описание кладбище на сколько угодно текста, жедательно не много разве что',
+            img: 'open_book_by__breezy__d19k2v-pre.jpg'
+        }
+    ];
+    const arrOfClasses = mainScreenTopicsInfo.map(function(item) {
+        return item.class;
+    });
 
-function hidePopup() {
-    infoSection.classList.remove('active');
-    infoSectionbg.classList.remove('active');
-};
+    document.addEventListener("click", (e) => {
+        if (mainScreeButtons.indexOf(e.target) != -1) {
+            console.log(e.target.classList[0]);
+            const currentArrIndex = arrOfClasses.indexOf(e.target.classList[0]);
+            console.log(mainScreenTopicsInfo[currentArrIndex].title);
+            console.log(mainScreenTopicsInfo[currentArrIndex].desc);
+            console.log(`../../images/${mainScreenTopicsInfo[currentArrIndex].img}`);
+            popupTitle.textContent = mainScreenTopicsInfo[currentArrIndex].title;
+            popupDesc.textContent = mainScreenTopicsInfo[currentArrIndex].desc;
+            popupImg.src = `../../images/${mainScreenTopicsInfo[currentArrIndex].img}`;
+            openPopup();
+        }
+    })
 
-lore.addEventListener('click', () => {
-    infoSectiionTitle.textContent = "Тайтл лора";
-    infoSectiionDesc.textContent = "Описание лора на сколько угодно текста, жедательно не много разве что";
-    infoSectionbg.classList.add('active');
-    infoSection.classList.add('active');
-});
-
-rules.addEventListener('click', () => {
-    infoSectiionTitle.textContent = "Тайтл Правила";
-    infoSectiionDesc.textContent = "Описание правил на сколько угодно текста, жедательно не много разве что";
-    infoSectionbg.classList.add('active');
-    infoSection.classList.add('active');
-});
-
-stories.addEventListener('click', () => {
-    infoSectiionTitle.textContent = "Тайтл историй";
-    infoSectiionDesc.textContent = "Описание историй на сколько угодно текста, жедательно не много разве что";
-    infoSection.classList.add('active');
-    infoSectionbg.classList.add('active');
-});
-
-graveyard.addEventListener('click', () => {
-    infoSectiionTitle.textContent = "Тайтл кладбище";
-    infoSectiionDesc.textContent = "Описание кладбище на сколько угодно текста, жедательно не много разве что";
-    infoSection.classList.add('active');
-    infoSectionbg.classList.add('active');
-    document.querySelector('.info-section__read-button').setAttribute('href', 'index.html');
-});
-
-document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
-    if (e.target === infoSectionbg) { // Если цель клика - фот, то:
-        infoSectionbg.classList.remove('active'); // Убираем активный класс с фона
-        infoSection.classList.remove('active'); // И с окна
+    function openPopup() {
+        popupBg.classList.add('active');
+        popup.classList.add('active');
+        document.addEventListener('mouseup', closeByClick);
+        document.addEventListener('keydown', closeByEscape);
     }
-});
+
+    function closePopup() {
+        popupBg.classList.remove('active');
+        popup.classList.remove('active');
+        document.removeEventListener('mouseup', closeByClick);
+        document.removeEventListener('keydown', closeByEscape);
+    };
+
+
+    function closeByClick(e) {
+        if (e.target === popupBg || e.target === popupCloseButton) {
+            closePopup()
+        }
+    };
+
+    function closeByEscape(e) {
+        if (e.key === 'Escape') {
+            closePopup()
+        }
+    };
+})();

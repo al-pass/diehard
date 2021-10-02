@@ -4,35 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DieHard</title>
+    <title>Die Hard</title>
     <link rel="stylesheet" href="../../normalize.css">
     <link rel="stylesheet" href="./main.css">
     <link rel="font" href="../../fonts/inter/Inter-Web/inter.css">
 </head>
 
 <body class="page">
-    <main>
+    <main class="main">
+        <img class="page_background-pic" src="../../images/DIEHARD-background-img.jpg">
+        <section class="info-blocks">
+            <button class="lore info-blocks__main-sections-buttons">
+                <h2 class="button-text lore__text-position ">Лор</h2>
+            </button>
+            <button class="rules info-blocks__main-sections-buttons">
+                <h2 class="button-text">Правила</h2>
+            </button>
+            <button class="stories info-blocks__main-sections-buttons">
+                <h2 class="button-text">Истории</h2>
+            </button>
+            <button class="graveyard info-blocks__main-sections-buttons">
+                <h2 class="button-text">Кладбище</h2>
+            </button>
+        </section>
         <section class="info-popup-bg">
             <div class="info-popup">
+                <img class="info-popup__close-button" src="../../images/close-icon.png">
                 <h3 class="info-popup__title">fff</h3>
-                <p class="info-popup__desc">sss</p>
-                <a href="../../index.html"><img src="../../images/Untitled-1.png" width="250"></a>
+                <div class="info-popup__body">
+                    <div class="info-popup__information-sector">
+                        <p class="info-popup__desc">sss</p>
+                    </div>
+                    <div class="info-popup__other">
+                        <img class="info-popup__img" src="../../images/open_book_by__breezy__d19k2v-pre.jpg">
+                        <a href="../../index.html"><img src="../../images/Untitled-1.png" width="250"></a>
+                    </div>
+                </div>
             </div>
         </section>
-        <img class="page_background-pic" src="../../images/DIEHARD-background.jpg">
-        <main class="main"></main>
-        <button class="lore">
-            <h2 class="lore__text">Лор</h2>
-        </button>
-        <button class="rules">
-            <h2 class="rules__text">Правила</h2>
-        </button>
-        <button class="stories">
-            <h2 class="stories__text">Истории</h2>
-        </button>
-        <button class="graveyard">
-            <h2 class="graveyard__text">Кладбище</h2>
-        </button>
     </main>
 
 
