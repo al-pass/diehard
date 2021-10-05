@@ -1,0 +1,76 @@
+        * {
+            font-family: "Inter", "Arial", sans-serif;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            background-image: url(../../images/DIEHARD-main-logo-background.jpg);
+            background-size: 110px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1440px;
+            height: 100vh;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .page_background-pic {
+            margin-top: -90px;
+            max-width: 1440px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .main-topics__title {
+            font-weight: bold;
+            font-size: 70px;
+            width: 60%;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .main-topics__main-text {
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            max-width: 750px;
+            width: 80%;
+        }
+        
+        .main button {
+            background: transparent;
+            border: none;
+        }
+        
+        .main a {
+            transition: 0.3s;
+            transform: scale(1.1);
+        }
+        
+        .page__to-main-link {
+            padding-top: 20px;
+            margin-bottom: 20px;
+            width: 150px;
+            justify-self: flex-end;
+        }
+        
+        .page__to-main-link:hover {
+            transition: 0.2s;
+            transform: scale(1.1);
+        }

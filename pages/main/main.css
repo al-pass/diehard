@@ -1,0 +1,270 @@
+    * {
+        font-family: "Inter", "Arial", sans-serif;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .page {
+        background-image: url(../../images/DIEHARD-main-logo-background.jpg);
+        background-size: 110px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        max-width: 1440px;
+        height: 100vh;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .page_background-pic {
+        margin-top: -90px;
+        max-width: 1440px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0.8;
+        z-index: -1;
+    }
+    
+    .info-popup-bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 3;
+        transition: 1s ease;
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-direction: column-reverse;
+    }
+    
+    .info-popup {
+        position: relative;
+        transform: scale(0);
+        transition: 0.5s ease-in;
+        height: 600px;
+        width: 900px;
+        border-radius: 2%;
+        padding: 30px;
+        background-image: url(../../images/main/кровопролитная-печать-2575392.jpg);
+    }
+    
+    .info-popup__close-button {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 30px;
+        opacity: 0.8;
+    }
+    
+    .info-popup__close-button:hover {
+        opacity: 1;
+    }
+    
+    .info-popup__body {
+        display: flex;
+        height: 90%;
+        justify-content: space-between;
+    }
+    
+    .info-popup__information-sector {
+        width: 60%;
+        margin-top: 30px;
+        overflow: scroll;
+        /* хром, сафари */
+    }
+    
+    .info-popup__information-sector::-webkit-scrollbar {
+        background: transparent;
+        width: 10px;
+    }
+    
+    .info-popup__information-sector::-webkit-scrollbar-thumb {
+        background-color: #223c50;
+        border-radius: 10px
+    }
+    
+    .info-popup__information-sector::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+    
+    .info-popup__other {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .info-popup__other a {
+        transition: 0.7s ease-out;
+    }
+    
+    .info-popup__other a:hover {
+        transition: 0.2s ease-out;
+        transform: scale(1.1);
+    }
+    
+    .info-popup__img {
+        width: 350px;
+    }
+    
+    .active {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+        transition: 1s ease;
+    }
+    
+    .info-popup__title {
+        font-size: 50px;
+        font-weight: bold;
+        color: #f48373;
+        text-align: center;
+        margin-top: 5px;
+    }
+    
+    .info-popup__desc {
+        font-size: 24px;
+        font-weight: bold;
+        color: #f48373;
+    }
+    
+    .info-blocks {
+        position: relative;
+        display: flex;
+    }
+    
+    .info-blocks__main-sections-buttons {
+        display: flex;
+        background: transparent;
+        border: none;
+    }
+    
+    .info-blocks__main-sections-buttons:focus {
+        border: none;
+    }
+    
+    .button-text {
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        color: #f48373;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s ease-in-out 0.2s;
+    }
+    
+    .lore {
+        align-items: flex-end;
+        position: absolute;
+        margin-top: 290px;
+        margin-left: 390px;
+        width: 120px;
+        height: 160px;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .lore {
+            margin-top: 330px;
+            margin-left: 220px;
+            width: 130px;
+            height: 150px;
+        }
+    }
+    
+    .lore:hover .button-text {
+        transition: 0.3s ease-in-out;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .lore__text-position {
+        margin-left: 30px;
+    }
+    
+    .rules {
+        align-items: flex-start;
+        margin-top: 130px;
+        margin-left: 490px;
+        width: 140px;
+        height: 140px;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .rules {
+            margin-top: 180px;
+            margin-left: 310px;
+            width: 130px;
+            height: 150px;
+        }
+    }
+    
+    .rules:hover .button-text {
+        transition: 0.3s ease-out;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .stories {
+        align-items: flex-start;
+        position: absolute;
+        margin-top: 140px;
+        margin-left: 860px;
+        width: 130px;
+        height: 140px;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .stories {
+            margin-top: 190px;
+            margin-left: 620px;
+            width: 130px;
+            height: 150px;
+        }
+    }
+    
+    .stories:hover .button-text {
+        transition: 0.3s ease-out;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .graveyard {
+        align-items: flex-end;
+        position: absolute;
+        margin-top: 290px;
+        margin-left: 900px;
+        width: 150px;
+        height: 170px;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .graveyard {
+            margin-top: 340px;
+            margin-left: 620px;
+            width: 130px;
+            height: 150px;
+        }
+    }
+    
+    .graveyard:hover .button-text {
+        transition: 0.3s ease-out;
+        visibility: visible;
+        opacity: 1;
+    }

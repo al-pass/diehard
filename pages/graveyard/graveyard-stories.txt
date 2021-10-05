@@ -1,0 +1,19 @@
+const graveyardStories = [{
+        story: 'Story number 1'
+    },
+    {
+        story: 'Story number 2'
+    },
+    {
+        story: 'Story number 3'
+    },
+    {
+        story: 'Story number 4'
+    },
+    {
+        story: 'Story number 5'
+    },
+    {
+        story: 'Story number 6'
+    },
+];
