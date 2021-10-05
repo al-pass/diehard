@@ -60,7 +60,12 @@
         
         .main a {
             transition: 0.3s;
-            transform: scale(1.1);
+            transform: scale(0.8);
+        }
+        
+        .main a:hover {
+            transition: 0.3s;
+            transform: scale(0.85);
         }
         
         .page__to-main-link {
@@ -68,6 +73,7 @@
             margin-bottom: 20px;
             width: 150px;
             justify-self: flex-end;
+            transition: 0.2s;
         }
         
         .page__to-main-link:hover {
